@@ -1,5 +1,4 @@
 package com.ajdev.intentnavigate;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,9 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +18,10 @@ public class MainActivity extends AppCompatActivity {
         Button btn=findViewById(R.id.urlbtn);
         EditText passtxt = findViewById(R.id.passtxt);
         Button passbtn = findViewById(R.id.passbtn);
-
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String url = editText.getText().toString();
-
                 if (editText.getText().toString().trim().isEmpty())
                 {
                     Toast.makeText(MainActivity.this, "please Enter some url....", Toast.LENGTH_SHORT).show();
@@ -38,19 +32,23 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     editText.setText("");
                 }
-
             }
         });
         passbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String msg = passtxt.getText().toString();
-                Intent intent2 = new Intent(getApplicationContext(),passdataactivity.class);
-                intent2.putExtra("msg",msg);
-                startActivity(intent2);
-
+                if(passtxt.getText().toString().trim().isEmpty())
+                {
+                    Toast.makeText(MainActivity.this, "Enter some text...", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Intent intent2 = new Intent(getApplicationContext(),passdataactivity.class);
+                    intent2.putExtra("msg",msg);
+                    startActivity(intent2);
+                }
             }
         });
-
     }
 }
