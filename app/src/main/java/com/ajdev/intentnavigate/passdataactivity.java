@@ -17,6 +17,7 @@ public class passdataactivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String str=getIntent().getExtras().getString("msg");
+
         textView.setText(str);
     }
 }
