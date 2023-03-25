@@ -17,14 +17,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         EditText editText=findViewById(R.id.urltxt);
         Button btn=findViewById(R.id.urlbtn);
+        EditText passtxt = findViewById(R.id.passtxt);
+        Button passbtn = findViewById(R.id.passbtn);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String url = editText.getText().toString();
 
                 if (editText.getText().toString().trim().isEmpty())
@@ -33,16 +34,23 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://"+url));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://"+url+".com"));
                     startActivity(intent);
                     editText.setText("");
                 }
 
-
+            }
+        });
+        passbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String msg = passtxt.getText().toString();
+                Intent intent2 = new Intent(getApplicationContext(),passdataactivity.class);
+                intent2.putExtra("msg",msg);
+                startActivity(intent2);
 
             }
         });
-
 
     }
 }

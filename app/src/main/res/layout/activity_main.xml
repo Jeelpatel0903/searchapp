@@ -18,7 +18,6 @@
         android:textAlignment="center"
         android:textSize="60sp"
         android:textColor="#000000"
-
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.399"
+        app:layout_constraintVertical_bias="0.282"
         app:layout_goneMarginLeft="80dp">
 
 
@@ -60,7 +59,60 @@
         android:text="Search.."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pass data from One Activity to Another Activity"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.564" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewpass"
+        android:layout_width="361dp"
+        android:layout_height="55dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696"
+        app:layout_goneMarginLeft="80dp">
+
+
+        <EditText
+            android:id="@+id/passtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:hint="Enter data for passing...."
+            android:textColor="@color/black"
+            app:cardElevation="15dp"
+            app:cardPreventCornerOverlap="true" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/passbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="596dp"
+        android:text="Click to pass data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
